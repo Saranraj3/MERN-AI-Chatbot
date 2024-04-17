@@ -1,9 +1,13 @@
 const { Router } = require('express');
-const router = Router();
+const UserRouter = require('./UserRouter');
+const ChatRouter = require('./ChatRouter');
+const Route = Router();
 
 
-router.use('/users');
+Route.use('/user', UserRouter);
+Route.use('/chats', ChatRouter);
 
 
 
-module.exports = router;
+
+module.exports = Route;
