@@ -17,7 +17,7 @@ function Signup() {
                 <input className='mt-[1rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type="email" placeholder='Enter Your Email Address' />
                 <input className='mt-[1rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type="Password" placeholder='Password' />
                 <input className='mt-[1rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type="password" placeholder='Confirm Password' />
-                <button className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-white font-bold bg-green-800 ' >Login</button>
+                <button className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-white text-lg font-bold bg-green-800 ' >Login</button>
             </div>
             <p className='text-center text-white mt-2 ml-[26rem]'>Already Have an Account Then ?<Link className='text-blue-500 ml-1' to='/login'>Login</Link></p>
         </div>

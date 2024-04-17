@@ -16,7 +16,7 @@ function Login() {
                 <h1 className='text-white text-center mt-[-26rem] ml-[26rem] font-extrabold text-2xl'>Login To You're Account</h1>
                 <input className='mt-[2rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type="email" placeholder='Enter Your Email Address' />
                 <input className='mt-[1rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type="password" placeholder='Password' />
-                <button className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-white font-bold bg-green-800 ' >Login</button>
+                <button className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-white text-lg font-bold bg-green-800 '>Login</button>
                 <span className='flex'>
                     <button className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-black font-bold bg-white '></button>
                     <img className='w-[2.5rem] h-[2.5rem] mt-5 ml-[-11rem] bg-white ' src={Google} alt="" />
