@@ -1,6 +1,5 @@
-const GetAllUserData = () => {
+export const GetAllUserData = () => {
 
 }
 
 
-module.exports = GetAllUserData;

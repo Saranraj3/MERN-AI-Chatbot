@@ -1,13 +1,14 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const morgan = require('morgan');
-const Route = require('./Routers');
-require('dotenv').config();
-const { MONGODB_URL, PORT } = process.env;
+import express from 'express';
+import mongoose from 'mongoose';
+import morgan from 'morgan';
+import Route from './Routers/index.js';
+import { config } from 'dotenv';
+const { PORT } = process.env;
+config();
 const app = express();
 
 mongoose
-    .connect(MONGODB_URL, {
+    .connect(process.env.MONGODB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

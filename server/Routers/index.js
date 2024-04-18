@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const UserRouter = require('./UserRouter');
-const ChatRouter = require('./ChatRouter');
+import ChatRouter from './ChatRouter.js';
+import UserRouter from './UserRouter.js';
+import { Router } from 'express';
 const Route = Router();
 
 
@@ -9,5 +9,4 @@ Route.use('/chats', ChatRouter);
 
 
 
-
-module.exports = Route;
+export default Route;
