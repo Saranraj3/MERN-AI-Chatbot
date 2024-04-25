@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-require('express-async-errors');
-const mainrouter = require('./Routes/index');
 const { PORT } = process.env;
 const app = express();
 
@@ -22,6 +20,5 @@ app.listen(PORT, () => {
 //Middleawers
 app.use(express.json());
 app.use(cors());
-app.use('api/v1/', mainrouter);
 
 
