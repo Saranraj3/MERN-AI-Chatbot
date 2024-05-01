@@ -6,6 +6,9 @@ const cookiesession = require('cookie-session');
 require('dotenv').config();
 const { MONGODB_URL, PORT } = process.env;
 const router = require('./Routes/index');
+const passport = require('passport')
+const route = require('./Routes/Auth');
+const PassportSetup = require('./Passport');
 const app = express();
 
 //MongoDB Connection
@@ -29,13 +32,16 @@ app.use(cors({
     credentials: true
 }));
 
-
 app.use(cookiesession({
     name: 'session',
     keys: ['Chatbot'],
     maxAge: 24 * 60 * 60 * 100,
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(cookieparser());
 app.use(express.json());
 app.use('/api', router);
+app.use('/auth', route);

@@ -4,11 +4,15 @@ import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import Logo from '../Assets/Png/Logo-Chatbot.gif';
 import Robot from '../Assets/Png/Robot.png';
-import Google from '../Assets/Png/google.png';
+import google from '../Assets/Png/google.png';
 import API from '../Common';
 import { toast } from 'react-toastify';
 
 function Login() {
+
+    const Google = () => {
+        window.open("http://localhost:4000/auth/google", "_self");
+    };
 
     const navigate = useNavigate();
     const [data, setData] = useState({
@@ -67,8 +71,8 @@ function Login() {
                 {(showPassword === false) ? <IoEye onClick={HanddleIcon} className='cursor-pointer text-white size-[1.5rem] mt-[-2.3rem] ml-[64rem] ' /> : <IoEyeOff onClick={HanddleIcon} className='cursor-pointer text-white size-[1.5rem] mt-[-2.3rem] ml-[64rem] ' />}
                 <button className='mt-[2rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-white text-lg font-bold bg-green-800 '>Login</button>
                 <span className='flex'>
-                    <button className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-black font-bold bg-white '></button>
-                    <img className='w-[2.5rem] h-[2.5rem] mt-5 ml-[-11rem] bg-white ' src={Google} alt="" />
+                    <button onClick={Google} className='mt-[1rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-black font-bold bg-white '></button>
+                    <img onClick={Google} className='w-[2.5rem] h-[2.5rem] mt-5 ml-[-11rem] bg-white ' src={google} alt="" />
                 </span>
             </form>
             <p className='text-center text-white mt-3 ml-[26.5rem]'>Don't Have an Account Create Then ?<Link className='text-blue-500 ml-1' to='/signup'>Signup</Link></p>
