@@ -5,10 +5,12 @@ import Signup from './Pages/Signup'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './Pages/Home';
+import NotFound from './Pages/NotFound';
+import Chat from './Pages/Chat';
 
 function App() {
 
-  
+
   return (
     <div>
       <ToastContainer
@@ -24,9 +26,11 @@ function App() {
         theme="dark"
       />
       <Routes>
-      <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/chat' element={<Chat />} />
+        <Route path='/notfound' element={<NotFound />} />
       </Routes>
     </div>
   )
