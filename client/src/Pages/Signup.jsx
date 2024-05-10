@@ -10,7 +10,6 @@ import Robot from '../Assets/Png/Robot.png';
 function Signup() {
 
     const navigate = useNavigate();
-
     const [data, setData] = useState({
         Name: '',
         Email: '',
@@ -28,10 +27,8 @@ function Signup() {
         });
     };
 
-
     const HandleOnSubmit = async (e) => {
         e.preventDefault()
-
         const dataresponse = await fetch(API.Signup.url, {
             method: API.Signup.method,
             headers: {
@@ -41,7 +38,6 @@ function Signup() {
         })
 
         const dataAPI = await dataresponse.json()
-
         if (dataAPI.success) {
             toast.success(dataAPI.message)
             navigate('/')
@@ -50,11 +46,9 @@ function Signup() {
         if (dataAPI.error) {
             toast.error(dataAPI.message)
         }
-
     }
 
     const [showPassword, setShowPassword] = useState(false);
-
     const HanddleIcon = () => {
         setShowPassword(!showPassword)
     }
@@ -73,10 +67,6 @@ function Signup() {
                     <input className='cursor-pointer mt-[1rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type="email" name='Email' value={data.Email} onChange={HandleOnChange} placeholder='Enter Your Email Address' />
                     <div>
                         <input className='cursor-pointer mt-[1rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type={(showPassword === false) ? 'Password' : 'text'} name='Password' value={data.Password} onChange={HandleOnChange} placeholder='Password' />
-                        {(showPassword === false) ? <IoEye onClick={HanddleIcon} className='cursor-pointer text-white size-[1.5rem] mt-[-2.3rem] ml-[64rem] ' /> : <IoEyeOff onClick={HanddleIcon} className='cursor-pointer text-white size-[1.5rem] mt-[-2.3rem] ml-[64rem] ' />}
-                    </div>
-                    <div>
-                        <input className='cursor-pointer mt-[2rem] ml-[46rem] pl-2 w-[20rem] h-[3rem] rounded-md text-white  bg-gray-600' type={(showPassword === false) ? 'Password' : 'text'} name='Confirmpassword' value={data.Confirmpassword} onChange={HandleOnChange} placeholder='Confirm Password' />
                         {(showPassword === false) ? <IoEye onClick={HanddleIcon} className='cursor-pointer text-white size-[1.5rem] mt-[-2.3rem] ml-[64rem] ' /> : <IoEyeOff onClick={HanddleIcon} className='cursor-pointer text-white size-[1.5rem] mt-[-2.3rem] ml-[64rem] ' />}
                     </div>
                     <button className='mt-[2rem] ml-[46rem] w-[20rem] h-[3rem] rounded-md text-white text-lg font-bold bg-green-800 '>Signup</button>
