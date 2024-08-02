@@ -17,7 +17,7 @@ function Login() {
                     <button type='submit' className='h-[2.5rem] w-[18rem] text-lg hover:opacity-80 rounded-sm bg-blue-400'>Continue</button>
                 </div>
                 <div className='mt-3 flex justify-center'>
-                    <img className='absolute size-[2.5rem]' src={googlelogo} alt="" />
+                    <img className='cursor-pointer absolute size-[2.5rem]' src={googlelogo} alt="" />
                     <button type='submit' className='h-[2.5rem] w-[18rem] text-lg rounded-sm bg-white'></button>
                 </div>
                 <span className='mt-3 flex justify-center'><p className='cursor-pointer text-white'>You Don't Have an Account ?</p><Link to='/signup' className='ml-2 cursor-pointer text-blue-400'> Singup</Link></span>
