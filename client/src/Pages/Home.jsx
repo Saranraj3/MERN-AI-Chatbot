@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../Assets/Png/Logo-Chatbot.gif';
 import { useTypewriter } from 'react-simple-typewriter';
 
@@ -14,8 +15,8 @@ function Home() {
                 <p className='mt-5 ml-2 cursor-pointer font-Noto font-bold text-xl text-white'>Chat AI</p>
             </span>
             <div className='mt-[-2rem] mr-6 gap-5 justify-end flex'>
-                <button className='bg-white hover:bg-opacity-60 w-[5rem] h-[2rem] rounded-md font-Noto font-semibold '>Log in</button>
-                <button className='bg-white hover:bg-opacity-60 w-[5rem] h-[2rem] rounded-md font-Noto font-semibold '>Sign up</button>
+                <Link to='/login'><button className='bg-white hover:bg-opacity-60 w-[5rem] h-[2rem] rounded-md font-Noto font-semibold '>Log in</button></Link>
+                <Link to='/signup'><button className='bg-white hover:bg-opacity-60 w-[5rem] h-[2rem] rounded-md font-Noto font-semibold '>Sign up</button></Link>
             </div>
             <div className='text-white text-lg gap-3 flex mt-[10rem] m-5'>
                 <p className='pt-2 pb-2 pl-4 cursor-pointer border rounded-md w-[30rem]'>Chatbots, also known as conversational agents, are designed with the help of AI (Artificial Intelligence) software. </p>

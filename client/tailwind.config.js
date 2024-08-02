@@ -6,9 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-       fontFamily:{
-       'Noto':["Noto Sans", 'sans-serif']
-       },
+      fontFamily: {
+        'Noto': ["Noto Sans", "sans-serif"],
+        'Gupter': ["Gupter", "serif"]
+      },
     },
   },
   plugins: [],
