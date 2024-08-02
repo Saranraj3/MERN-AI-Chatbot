@@ -9,7 +9,7 @@ function Home() {
         loop: {},
     });
     return (
-        <div className='min-h-screen bg-violet-900'>
+        <div className='min-h-screen bg-gray-900'>
             <span className='flex'>
                 <img className='mt-2 ml-4 cursor-pointer size-[3rem]' src={logo} alt="" />
                 <p className='mt-5 ml-2 cursor-pointer font-Noto font-bold text-xl text-white'>Chat AI</p>
@@ -24,7 +24,7 @@ function Home() {
                 <p className='pt-2 pb-2 pl-4 cursor-pointer border rounded-md w-[30rem]'>They simulate a conversation (or a chat) with users in a via messaging applications, websites, mobile apps, or phone. </p>
                 <p className='pt-2 pb-2 pl-4 cursor-pointer border rounded-md w-[30rem]'>Chatbots are computer programs designed to simulate human conversation, and they have evolved from simple rule-based. </p>
             </div>
-            <div className='m-5 mt-[7rem] h-[3rem] cursor-pointer rounded-2xl border bg-violet-700 text-white'>
+            <div className='m-5 mt-[7rem] h-[3rem] cursor-pointer rounded-2xl border bg-gray-800 text-white'>
                 <p className='mt-3 ml-3'>{text}</p>
             </div>
             <p className='text-white text-center cursor-pointer'>This Chat AI Can Make Mistakes</p>
