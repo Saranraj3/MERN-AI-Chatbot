@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-dotenv.config()
+dotenv.config();
+import AuthRoute from './Routes/AuthRoute.js';
 
 const app = express()
 
@@ -12,6 +13,10 @@ mongoose.connect(process.env.MONGODB).then(() => {
 }).catch((err) => {
     console.log(err)
 })
+
+// API Routes
+app.use(express.json());
+app.use('/api/auth',AuthRoute);
 
 app.listen(process.env.PORT, () => {
     console.log("Server Running Port 5010")
