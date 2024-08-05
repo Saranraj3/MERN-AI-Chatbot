@@ -16,8 +16,20 @@ mongoose.connect(process.env.MONGODB).then(() => {
 
 // API Routes
 app.use(express.json());
-app.use('/api/auth',AuthRoute);
+app.use('/api/auth', AuthRoute);
 
 app.listen(process.env.PORT, () => {
     console.log("Server Running Port 5010")
 })
+
+// Middleware
+
+app.use((err, req, res, next) => {
+    const statuscode = err.statuscode || 500
+    const message = err.message || 'Something Went Wrong'
+    return res.status(statuscode).json({
+        success: false,
+        message,
+        statuscode
+    })
+});
