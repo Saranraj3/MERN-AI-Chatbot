@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
 
     const [formdata, setFormdata] = useState({});
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const navigate = useNavigate();
     const Handlechange = (e) => {
         setFormdata({ ...formdata, [e.target.id]: e.target.value });
     }
@@ -22,12 +23,12 @@ function Signup() {
                 body: JSON.stringify(formdata),
             });
             const data = await res.json()
-            console.log(data);
             setLoading(false)
             if (data.success === false) {
                 setError(true);
                 return;
             }
+            navigate('/');
         } catch (error) {
             setLoading(false);
             setError(true);
