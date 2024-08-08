@@ -28,7 +28,7 @@ function Signup() {
                 setError(true);
                 return;
             }
-            navigate('/');
+            navigate('/dashboard');
         } catch (error) {
             setLoading(false);
             setError(true);

@@ -7,7 +7,7 @@ import Login from './Pages/Login.jsx';
 import Signup from './Pages/Signup.jsx';
 import Dashboard from './Pages/Dashboard.jsx';
 import Chat from './Pages/Chat.jsx';
-import Menu from './Pages/Menu.jsx';
+import DashboardLayout from './Pages/DashboardLayout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <Signup />
   },
   {
-    element: <Menu />,
+    element: <DashboardLayout />,
     children: [
       {
         path: '/dashboard',
