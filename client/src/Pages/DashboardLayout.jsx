@@ -4,9 +4,9 @@ import Sidebar from '../Components/Sidebar/Sidebar'
 
 function DashboardLayout() {
     return (
-        <div className='min-h-screen flex bg-gray-800 text-white'>
+        <div className='overflow-hidden min-h-screen flex bg-gray-800 text-white'>
             <Sidebar />
-            <div className='flex-grow flex items-center justify-center p-4'>
+            <div className='overflow-hidden flex-grow flex items-center justify-center p-4'>
                 <Outlet />
             </div>
         </div>
