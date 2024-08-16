@@ -22,17 +22,6 @@ export default {
     },
   },
   plugins: [
-    function ({ addComponents }) {
-      addComponents({
-        '.hide-scrollbar': {
-          'scrollbar-width': 'none',  // Firefox
-          '-ms-overflow-style': 'none',  // IE and Edge
-          '&::-webkit-scrollbar': {
-            display: 'none',  // WebKit browsers
-          },
-        },
-      });
-    },
   ],
 }
 
