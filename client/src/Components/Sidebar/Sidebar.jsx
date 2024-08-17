@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { IoMdCreate } from "react-icons/io";
 import { GrAppsRounded } from "react-icons/gr";
 import { Link } from 'react-router-dom';
-import { RiSidebarFoldFill } from "react-icons/ri";
+import { RiSidebarFoldFill, RiVipDiamondFill } from "react-icons/ri";
+import { BiMenuAltLeft } from 'react-icons/bi';
+import { MdAccountCircle } from 'react-icons/md';
 
 function Sidebar() {
   const [sidebar, setSidebar] = useState(true);
@@ -13,39 +15,85 @@ function Sidebar() {
 
   return (
     <div className="relative min-h-screen flex">
-      <div
-        className={`transform transition-transform duration-300 ease-in-out ${sidebar ? 'translate-x-0' : '-translate-x-full'} 
-        fixed w-1/5 p-5 pt-6 min-h-screen bg-gray-900 font-Noto text-white`}>
-        <div className='flex justify-between'>
-          <RiSidebarFoldFill onClick={handleClick} className='size-[1.5rem] cursor-pointer' />
-          <Link to='/dashboard'><IoMdCreate className='size-[1.5rem] cursor-pointer' /></Link>
+      {/* Large Screen Sidebar */}
+      <div className="hidden lg:flex">
+        <div
+          className={`transform transition-transform duration-300 ease-in-out ${sidebar ? 'translate-x-0' : '-translate-x-full'}
+            fixed w-64 md:w-1/5 p-5 pt-6 min-h-screen bg-gray-900 font-Noto text-white`}>
+          <div className='flex justify-between items-center'>
+            <RiSidebarFoldFill onClick={handleClick} className='text-2xl cursor-pointer' />
+            <Link to='/dashboard'><IoMdCreate className='text-2xl cursor-pointer' /></Link>
+          </div>
+          <div className='mt-10'>
+            <span className='flex items-center cursor-pointer'>
+              <IoMdCreate className='text-xl' />
+              <Link to='/dashboard' className='ml-2 text-nowrap text-base'>Create a New Chat</Link>
+            </span>
+            <div className='mt-5 flex items-center cursor-pointer'>
+              <GrAppsRounded className='text-xl' />
+              <Link to='/' className='ml-2 text-nowrap text-base'>Explore AI</Link>
+            </div>
+            <hr className='my-5' />
+            <Link to='/' className='block mt-3 text-nowrap text-base'>Chat List</Link>
+            <hr className='my-5' />
+            <div className='absolute bottom-0 w-full pb-2'>
+              <span className='flex items-center cursor-default'>
+                <RiVipDiamondFill className='text-emerald-500 text-xl' />
+                <h1 className='ml-2 text-nowrap text-base'>Upgrade AI Pro</h1>
+              </span>
+            </div>
+          </div>
         </div>
-        <span className='mt-7 flex cursor-pointer'>
-          <IoMdCreate className='mt-4 size-[1.3rem]' />
-          <Link to='/dashboard' className='mt-2 ml-2 text-lg '>Create a New Chat</Link>
-        </span>
-        <div className='mt-5 text-lg flex'>
-          <GrAppsRounded className='mt-[6px] size-[1.3rem] cursor-pointer' />
-          <Link to='/' className='ml-2'>Explore AI</Link>
-        </div>
-        <hr className='mt-5' />
-        <div className='mt-3 grid'>
-          <Link to='/' className='mt-3'>Chat List</Link>
-        </div>
-        <hr className='mt-5' />
-        <div className='mt-3 cursor-default'>
-          <h1>Upgrade AI Pro</h1>
+        <div className={`flex-grow transition-all duration-300 ease-in-out ${sidebar ? 'lg:ml-64 md:ml-1/5' : 'ml-0'}`}>
+          {!sidebar && (
+            <div className='fixed flex top-5 left-5 cursor-pointer'>
+              <RiSidebarFoldFill onClick={handleClick} className='text-2xl text-white' />
+              <Link to='/dashboard'><IoMdCreate className='ml-8 text-2xl cursor-pointer' /></Link>
+            </div>
+          )}
         </div>
       </div>
-      <div className={`flex-grow ml-0 ${sidebar ? 'ml-1/5' : ''} transition-all duration-300 ease-in-out`}>
-        {!sidebar && (
-          <div className='fixed flex top-5 left-5 cursor-pointer'>
-            <RiSidebarFoldFill onClick={handleClick} className='size-[1.5rem] text-white' />
-            <Link to='/dashboard'><IoMdCreate className='ml-[2rem] size-[1.5rem] cursor-pointer' /></Link>
+
+      {/* Small Screen Sidebar */}
+      <div className="lg:hidden flex">
+        <div
+          className={`transform transition-transform duration-300 ease-in-out ${sidebar ? 'translate-x-0' : '-translate-x-full'}
+            fixed w-64 p-5 pt-6 min-h-screen bg-gray-900 font-Noto text-white`}>
+          <div className='flex justify-between items-center'>
+            <BiMenuAltLeft onClick={handleClick} className='text-2xl cursor-pointer' />
+            <Link to='/dashboard'><IoMdCreate className='text-2xl cursor-pointer' /></Link>
           </div>
-        )}
-        <div className='invisible flex justify-center items-center'>
-          <h1 className='invisible'>Dashboard Content</h1>
+          <div className='mt-10'>
+            <span className='flex items-center cursor-pointer'>
+              <IoMdCreate className='text-xl' />
+              <Link to='/dashboard' className='ml-2 text-nowrap text-base'>Create a New Chat</Link>
+            </span>
+            <div className='mt-5 flex items-center cursor-pointer'>
+              <GrAppsRounded className='text-xl' />
+              <Link to='/' className='ml-2 text-nowrap text-base'>Explore AI</Link>
+            </div>
+            <hr className='my-5' />
+            <Link to='/' className='block mt-3 text-nowrap text-base'>Chat List</Link>
+            <hr className='my-5' />
+            <div className='absolute bottom-0 w-full pb-2'>
+              <span className='flex items-center cursor-default'>
+                <RiVipDiamondFill className='text-emerald-500 text-xl' />
+                <h1 className='ml-2 text-nowrap text-base'>Upgrade AI Pro</h1>
+              </span>
+              <span className='flex items-center cursor-default'>
+                <MdAccountCircle className='mt-2 ml-[-0.4rem] size-[2rem]' />
+                <h1 className='mt-1 ml-2 text-base'>name</h1>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className={`flex-grow transition-all duration-300 ease-in-out ${sidebar ? 'ml-64' : 'ml-0'}`}>
+          {!sidebar && (
+            <div className='fixed justify-between w-full flex top-5 cursor-pointer'>
+              <BiMenuAltLeft onClick={handleClick} className='ml-[1rem] text-2xl text-white' />
+              <Link to='/dashboard'><IoMdCreate className='ml-[-2rem] text-2xl cursor-pointer' /></Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
