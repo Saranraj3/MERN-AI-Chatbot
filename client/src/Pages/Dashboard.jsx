@@ -11,8 +11,8 @@ function Dashboard({ sidebarVisible }) {
   return (
     <div className={`${sidebarVisible ? 'w-full md:w-4/5' : 'w-full'} flex flex-col items-center min-h-screen transition-all duration-300 ease-in-out`}>
       <div className='flex justify-between items-center w-full px-4'>
-        <BiMenuAltLeft className='xs:visible lg:invisible text-[2rem] cursor-pointer' />
-        <MdAccountCircle className='text-[2.3rem] cursor-pointer' />
+        <BiMenuAltLeft className='xs:invisible ml-[-1.3rem] size-[2rem] cursor-pointer' />
+        <MdAccountCircle className='xs:invisible lg:visible mr-[-1.3rem] size-[2.3rem] cursor-pointer' />
       </div>
       <div className='mt-[-5rem] flex justify-center items-center h-screen'>
         <div className='text-white gap-3 max-w-2xl lg:grid-cols-4 lg:grid flex flex-wrap justify-center'>
@@ -30,7 +30,7 @@ function Dashboard({ sidebarVisible }) {
           </p>
         </div>
       </div>
-      <div className='mt-[-10rem] top-full sticky pb-9'>
+      <div className='mt-[-10rem] top-full sticky pb-5'>
         <div className='flex justify-center w-full relative'>
           <div className='relative xs:w-[20rem] sm:w-[35rem] md:w-[45rem] lg:w-[rem] w-full max-w-[em]'>
             <input
